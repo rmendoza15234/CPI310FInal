@@ -89,7 +89,7 @@ script {
     left: 400px;
     width: 50%;
  }
- h2 {
+ .profile h2 {
      font-weight: Bold;
      font-style: italic;
      font-size: 75px;
@@ -101,7 +101,7 @@ script {
     color: pink
  }
 
- h3{
+ .profile h3{
     font-weight: Bold;
     font-style: italic;
     font-size: 75px;
