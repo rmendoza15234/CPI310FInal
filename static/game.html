@@ -40,14 +40,14 @@
                 function startGame() 
                 {
                     //creating the flappy bird player
-                    flappyBird = new component(30, 30, "yellow", 10, 120);
+                    flappyBird = new component(30, 30, "blue", 10, 120);
                     flappyBeak = new component(20, 15, "orange", 40, 135);
 
                     //gravity pulling down
                     flappyBird.gravity = 0.05;
                     flappyBeak.gravity = 0.05;
                     //creating the score component
-                    score = new component("32px", "Times", "black", 280, 40, "text");
+                    score = new component("32px", "Times", "white", 280, 40, "text");
                     //this will start the game
                     myGameArea.start();
                 }
