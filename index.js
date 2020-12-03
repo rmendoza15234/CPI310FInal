@@ -60,6 +60,18 @@ app.get("/", async (req, res) => {
     res.render("home", { user: req.user }); //renders the home page
 });
 
+app.get("/game", async (req, res) => {
+    //read messages from the database
+    const db = await dbPromise;
+    const messages = await db.all(`SELECT
+        Messages.id,
+        Messages.content,
+        Users.username as authorName
+        FROM Messages LEFT JOIN Users WHERE Messages.authorId = Users.id;`); //grabs all the messages along with the user who posted the message
+
+    res.render("game", { user: req.user }); //renders the standings page
+});
+
 app.get("/standings", async (req, res) => {
     //read messages from the database
     const db = await dbPromise;
