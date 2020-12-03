@@ -60,6 +60,30 @@ app.get("/", async (req, res) => {
     res.render("home", { user: req.user }); //renders the home page
 });
 
+app.get("/standings", async (req, res) => {
+    //read messages from the database
+    const db = await dbPromise;
+    const messages = await db.all(`SELECT
+        Messages.id,
+        Messages.content,
+        Users.username as authorName
+        FROM Messages LEFT JOIN Users WHERE Messages.authorId = Users.id;`); //grabs all the messages along with the user who posted the message
+
+    res.render("standings", { user: req.user }); //renders the standings page
+});
+
+app.get("/profile", async (req, res) => {
+    //read messages from the database
+    const db = await dbPromise;
+    const messages = await db.all(`SELECT
+        Messages.id,
+        Messages.content,
+        Users.username as authorName
+        FROM Messages LEFT JOIN Users WHERE Messages.authorId = Users.id;`); //grabs all the messages along with the user who posted the message
+
+    res.render("profile", { user: req.user }); //renders the profile page
+});
+
 app.get("/forum", async (req, res) => {
     //read messages from the database
     const db = await dbPromise;
@@ -71,18 +95,6 @@ app.get("/forum", async (req, res) => {
     console.log("messages", messages);
 
     res.render("forum", { messages: messages, user: req.user }); //renders the messages and user to the forum page
-});
-
-app.get("/standings", async (req, res) => {
-    //read messages from the database
-    const db = await dbPromise;
-    const messages = await db.all(`SELECT
-        Messages.id,
-        Messages.content,
-        Users.username as authorName
-        FROM Messages LEFT JOIN Users WHERE Messages.authorId = Users.id;`); //grabs all the messages along with the user who posted the message
-
-    res.render("standings", { user: req.user }); //renders the home page
 });
 
 app.get("/register", (req, res) => { //wiring up registration page
