@@ -21,7 +21,7 @@
 
 .navbar a {
     text-decoration: none;
-    color: yellow;
+    color:#eceddd;
 }
 
 .navbar a.logo {
@@ -83,7 +83,7 @@ script {
      top: 150px;
      left: 400px;
      width: 50%;
-     border: solid white 5px;
+     border: solid#eceddd 5px;
      background-color: #bf92bf;
  }
 
