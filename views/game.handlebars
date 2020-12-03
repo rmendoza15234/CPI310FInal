@@ -43,7 +43,7 @@
                 //array of all the pipes to be generated
                 var pipes = [];
                 //score to keep track of points
-                var score;
+                const score;
                 //*************************************
                 
                 //this function will load all the components when the page loads
@@ -57,7 +57,7 @@
                     flappyBird.gravity = 0.05;
                     flappyBeak.gravity = 0.05;
                     //creating the score component
-                    score = new component("32px", "Times", "#eceddd", 280, 40, "text");
+                    export score = new component("32px", "Times", "#eceddd", 280, 40, "text");
                     //this will start the game
                     myGameArea.start();
                 }
