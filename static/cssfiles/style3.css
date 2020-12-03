@@ -115,8 +115,10 @@ script {
  .duckdumper{
      background-color: yellow;
      position: center;
+     text-align: center;
  }
 
 .hInfo {
-    position:center;
+    position: center;
+    text-align: center;
 }
