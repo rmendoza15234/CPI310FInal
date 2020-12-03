@@ -21,14 +21,14 @@
     </ul>
   </nav>
   <main>
-            <div class="gamebtn">
-        <button class="gamebutton" onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.08)">JUMP</button>
-    </div>
 <div class="Gamelog">
     {{#if user}}
 	<form action="/logout" method="POST">
     	<button type="submit">logout</button>
 	</form>
+    <div class="gamebtn">
+        <button class="gamebutton" onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.08)">JUMP</button>
+    </div>
     <div>
             <br>
             

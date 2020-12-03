@@ -13,7 +13,7 @@ import sqlite3 from "sqlite3"; //importing sqlite
 import { open } from "sqlite";
 
 import { grantAuthToken, lookupUserFromAuthToken } from "./auth";
-import { score } from "./game"
+/*import { score } from "./game";*/
 
 export const dbPromise = open({ //exporting dbPromise to use in auth.js
     filename: "data.db",
