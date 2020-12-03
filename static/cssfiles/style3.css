@@ -77,12 +77,14 @@ script {
     top: 100px;
     left: 100px;
 }
- canvas{
+ canvas
+ {
      position: relative;
      top: 150px;
      left: 400px;
      width: 50%;
-     border: solid #aa78f1 10px;
+     border: solid white 5px;
+     background-color: #bf92bf;
  }
 
  .login {
