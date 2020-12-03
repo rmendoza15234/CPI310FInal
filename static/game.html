@@ -65,9 +65,12 @@
                         this.canvas.width = 720;
                         //height of the canvas
                         this.canvas.height = 450;
+
                         //this defines the game as 2d
                         this.context = this.canvas.getContext("2d");
                         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+                        // this.canvas.fillStyle = "red";
+                        // this.canvas.fillRect(10,10,720,450);
                         //start at the first frame
                         this.frameNo = 0;
                         //internal is updated
