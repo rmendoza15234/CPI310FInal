@@ -5,7 +5,7 @@
 }
 
 .navbar {
-    background-color: #9054e6;
+    background-color:#885c8f;
     color: #000;
     border-bottom: 0.5px solid grey;
     width: 100%;
@@ -85,6 +85,7 @@ script {
      width: 50%;
      border: solid#eceddd 5px;
      background-color: #bf92bf;
+     border-radius: 10px;
  }
 .gamebtn button{
     position: relative;
