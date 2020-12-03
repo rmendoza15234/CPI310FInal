@@ -5,7 +5,7 @@
 }
 
 .navbar {
-    background-color: #532197;
+    background-color: #9054e6;
     color: #000;
     border-bottom: 0.5px solid grey;
     width: 100%;
@@ -115,15 +115,16 @@ script {
  }
 
  .duckdumper{
-     background-color: rgb(196, 196, 10);
      position: center;
      text-align: center;
+     top: 500px;
  }
 
 .hInfo {
     text-align:center;
     position:center;
     font-size: 36;
+    color: yellow;
 }
 
 
