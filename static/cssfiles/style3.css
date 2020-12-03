@@ -112,3 +112,7 @@ script {
     width: 50%;
     color: pink
  }
+ .duckdumper hr{
+     background-color: yellow;
+     position: center;
+ }
