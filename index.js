@@ -13,6 +13,7 @@ import sqlite3 from "sqlite3"; //importing sqlite
 import { open } from "sqlite";
 
 import { grantAuthToken, lookupUserFromAuthToken } from "./auth";
+/*import { score } from "./game";*/
 
 export const dbPromise = open({ //exporting dbPromise to use in auth.js
     filename: "data.db",
@@ -60,7 +61,7 @@ app.get("/", async (req, res) => {
     res.render("home", { user: req.user }); //renders the home page
 });
 
-app.get("/standings", async (req, res) => {
+app.get("/game", async (req, res) => {
     //read messages from the database
     const db = await dbPromise;
     const messages = await db.all(`SELECT
@@ -69,7 +70,20 @@ app.get("/standings", async (req, res) => {
         Users.username as authorName
         FROM Messages LEFT JOIN Users WHERE Messages.authorId = Users.id;`); //grabs all the messages along with the user who posted the message
 
-    res.render("standings", { user: req.user }); //renders the standings page
+    res.render("game", { user: req.user }); //renders the standings page
+});
+
+app.get("/standings", async (req, res) => {
+    //read scores from the database
+    const db = await dbPromise;
+    const scores = await db.all(`SELECT
+        Scores.id,
+        Scores.score,
+        Users.username as playerName
+        FROM Scores LEFT JOIN Users WHERE Scores.playerId = Users.id;`); //grabs all of the scores along with the user
+    console.log("scores", scores);
+
+    res.render("standings", { scores: scores, user: req.user }); //renders the standings page
 });
 
 app.get("/profile", async (req, res) => {
@@ -177,6 +191,18 @@ app.post("/message", async (req, res) => {
     const db = await dbPromise;
     await db.run("INSERT INTO Messages (content, authorId) VALUES (?, ?);", req.body.message, req.user.id); 
     res.redirect("/forum");
+});
+
+app.post("/addScore", async (req, res) => {
+    if(!req.user)
+    {
+        res.status(401); //code for not being logged in
+        return res.send("must be logged in to see standings"); //error message if the user tries to send a message without being logged in
+    }
+    //write scores to the database
+    const db = await dbPromise;
+    await db.run("INSERT INTO Scores (score, playerId) VALUES (?, ?);", req.body.addScore, req.user.id); 
+    res.redirect("/standings");
 });
 
 app.post("/logout", (req, res) => { //logout function

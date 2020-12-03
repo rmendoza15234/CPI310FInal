@@ -1,32 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset = "UTF-8">
-		<meta name="viewport" content="width-device-width, initial-scale-1.0">
-		<title> Game </title>
-		<link rel="stylesheet" type="text/css" href="cssfiles/style3.css">
-      </head>
-      
-      <body>
-        <nav class = "navbar">
-            <a href = "ProfilePage.html" class = "logo"> JUMPING JAYBIRD </a>
-            <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="/standings">Standings</a></li>
-            <li><a href="/profile">Profile</a></li>
-            <li><a href="/forum">Forum</a></li>
-            </ul>
-          </nav>
-        <main>
-            <div class="gamebtn">
-        <button class="gamebutton" onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.08)">JUMP</button>
-    </div>
-        <div>
-            <br>
-            
-
-            <script>
 
                 //**************  DECLARING VARIABLES
                 //the player object
@@ -36,7 +7,7 @@
                 //array of all the pipes to be generated
                 var pipes = [];
                 //score to keep track of points
-                var score;
+                
                 //*************************************
                 
                 //this function will load all the components when the page loads
@@ -50,7 +21,7 @@
                     flappyBird.gravity = 0.05;
                     flappyBeak.gravity = 0.05;
                     //creating the score component
-                    score = new component("32px", "Times", "#eceddd", 280, 40, "text");
+                    export const score = new component("32px", "Times", "#eceddd", 280, 40, "text");
                     //this will start the game
                     myGameArea.start();
                 }
@@ -192,9 +163,3 @@
                     flappyBird.gravity = n;
                     flappyBeak.gravity = n;
                 }
-                </script>    
-                <br>
-            </div> 
-            
-    </body>
-</html>
