@@ -22,3 +22,4 @@ export const lookupUserFromAuthToken = async (authToken) => { //looks for the us
     
     return user;
 }
+// test comment
