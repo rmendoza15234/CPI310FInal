@@ -5,7 +5,7 @@
 }
 
 .navbar {
-    background-color: #9054e6;
+    background-color:#885c8f;
     color: #000;
     border-bottom: 0.5px solid grey;
     width: 100%;
@@ -85,11 +85,25 @@ script {
      width: 50%;
      border: solid#eceddd 5px;
      background-color: #bf92bf;
+     border-radius: 10px;
  }
 .gamebtn button{
     position: relative;
     top: 150px;
-    left: 700px;
+    left: 650px;
+}
+
+.gamebutton {
+    background-color: #eceddd;
+    padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  color:  #bf92bf;
+  border-color: #bf92bf;
 }
  .login {
     position: relative;
