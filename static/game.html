@@ -11,7 +11,7 @@
 		<nav class = "navbar">
 		  <a href = "ProfilePage.html" class = "logo"> Game </a>
 		  <ul>
-			<li><a href="/">Home</a></li>
+			<li><a href="index.html">Home</a></li>
 			<li><a href="aboutus.html">About Us</a></li>
 			<li><a href="game.html">Game</a></li>
 			<li><a href="specifications.html">Standings</a></li>
@@ -23,6 +23,7 @@
     </div>
         <div>
             <br>
+            
 
             <script>
 
@@ -88,8 +89,9 @@
                 //******************************
             
                 
-                
-                function component(width, height, color, x, y, type) {
+                //****************** BASICALLY A CONSTRUCTOR SET UP FOR CREATING GAME COMPONENTS FOR PLAYER, SCORE, ETC.
+                function component(width, height, color, x, y, type) 
+                {
                     this.type = type;
                     this.score = 0;
                     this.width = width;
@@ -140,6 +142,7 @@
                         return crash;
                     }
                 }
+                //**************************************************************************
                 
                 function updateGameArea() {
                     var x, height, gap, minHeight, maxHeight, minGap, maxGap;
