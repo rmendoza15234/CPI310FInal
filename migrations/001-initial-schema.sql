@@ -9,10 +9,12 @@ CREATE TABLE Messages (
 CREATE TABLE Users (
     id INTEGER PRIMARY KEY,
     email STRING UNIQUE,
-    username STRING,
-    password STRING
+    username STRING UNIQUE,
+    password STRING,
+    personalScore INTEGER
 );
 
+--Used for security purposes for user
 CREATE TABLE AuthTokens (
     id INTEGER PRIMARY KEY,
     token STRING,
