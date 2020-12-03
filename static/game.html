@@ -51,7 +51,7 @@
                     //this will start the game
                     myGameArea.start();
                 }
-                //creating the game area
+                //************** CREATING THE GAME AREA
                 var myGameArea = 
                 {
                     //canvas is where the game is drawn
@@ -75,12 +75,18 @@
                         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
                     }
                 }
+                //*****************************************
+
+                //******** FOR DEBUGGING PURPOSES
                 let isStarted = 0;
+                //making sure the game starts only once
                 if(isStarted == 0)
                 {
                     startGame();
+                    //will only run once until reloaded
                     isStarted = 1;
                 }
+                //******************************
             
                 
                 
