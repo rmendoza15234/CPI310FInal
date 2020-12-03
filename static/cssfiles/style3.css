@@ -1,0 +1,91 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: #532197;
+    color: #000;
+    border-bottom: 0.5px solid grey;
+    width: 100%;
+    line-height: 80px;
+    height: 80px;
+    font-size: 18px;
+    padding: 0 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: yellow;
+}
+
+.navbar a.logo {
+    float: left;
+    height: inherit;
+    line-height: inherit;
+    padding: 0 30px;
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.navbar ul{
+    float: right;
+    list-style: none;
+    height: inherit;
+    line-height: inherit;
+    padding: 0 50px;
+}
+
+.navbar ul li {
+    display: inline-block;
+}
+
+.navbar ul li a{
+    display: block;
+    text-align: center;
+    min-width: auto;
+    padding: 0 30px;
+}
+
+.navbar ul li a:hover{
+    background-color: #aa78f1;
+}
+
+body{
+    background-color: #35175f;
+}
+
+main {
+    width: 50%;
+    position: relative;
+    top: 50px;
+    left: 50px;
+}
+
+script {
+    width: 100%;
+    position: bottom;
+    top: 100px;
+    left: 100px;
+}
+ canvas{
+     position: relative;
+     top: 150px;
+     left: 400px;
+     width: 50%;
+ }
+
+ .login {
+    position: relative;
+    top: 350px;
+    left: 400px;
+    width: 50%;
+ }

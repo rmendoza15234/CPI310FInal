@@ -1,27 +1,28 @@
 <!DOCTYPE html> 
-<html>
-
-	<head> 
-        <title>Home</title>
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-		<link rel="icon" href="favicon.ico" type="image/x-icon">
-
-		<link href="static/cssfiles/index.css" rel = "stylesheet" type ="text/css">
-        <link href="static/cssfiles/navstyle.css" rel = "stylesheet" type ="text/css">
-
-	<title> CPI 310 GROUP 3 PROJECT  </title>
-	
-		
-		<h1>Not Fire-Boy and Water-Girl</h1>
-		<h2><b>Navigation Page</b></h2>
-        <ul style="border-style: outset" id="bg_nav">
-            <li><a  class="active" href="/" style="color: white" >Home</a></li>
-            <li><a href="static/game.html" style="color: white">Play Game</a></li>
-            <li><a  href="static/aboutus.html" style="color: white">About Us</a></li>
-            <li><a href="/forum" style="color: white">Forum</a></li>
-            <li><a href="/standings" style="color: white">Standings</a></li>
-            <li><a href="static/ProfilePage.html" style="color: white">Your Profile</a></li>
-
+<html lang="en">
+	<head>
+		<meta charset = "UTF-8">
+		<meta name="viewport" content="width-device-width, initial-scale-1.0">
+		<title> Home Page </title>
+		<link rel="stylesheet" type="text/css" href="cssfiles/style3.css">
+	  </head>
+      <br>
+      <body>
+        <div class="pic">
+          <img src="photos/Background.jpg">
+        </div>
+    
+  <nav class = "navbar">
+    <a href = "ProfilePage.html" class = "logo"> Pigeon Piper </a>
+    <ul>
+    <li><a href="static/index.html">Home</a></li>
+    <li><a href="static/aboutus.html">About Us</a></li>
+    <li><a href="static/game.html">Game</a></li>
+    <li><a href="/home">Standings</a></li>
+    <li><a href="/forum">Forum</a></li>
+    </ul>
+  </nav>
+  
     {{#if user}}
 	<form action="/logout" method="POST">
     	<button type="submit">logout</button>

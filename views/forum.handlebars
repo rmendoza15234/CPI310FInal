@@ -1,8 +1,27 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Forum</title>
-	<link rel="stylesheet" type="text/css" href="static/cssfiles/navstyle.css">
+<!DOCTYPE html> 
+<html lang="en">
+	<head>
+		<meta charset = "UTF-8">
+		<meta name="viewport" content="width-device-width, initial-scale-1.0">
+		<title> Home Page </title>
+		<link rel="stylesheet" type="text/css" href="static/cssfiles/style3.css">
+	  </head>
+      <br>
+      <body>
+        <div class="pic">
+          <img src="photos/Background.jpg">
+        </div>
+    
+  <nav class = "navbar">
+    <a href = "ProfilePage.html" class = "logo"> Pigeon Piper </a>
+    <ul>
+    <li><a href="/home">Home</a></li>
+    <li><a href="static/aboutus.html">About Us</a></li>
+    <li><a href="static/game.html">Game</a></li>
+    <li><a href="static/specifications.html">Standings</a></li>
+    </ul>
+  </nav>
+  </body>
 <style>
 h1 {
 	text-align: center;
@@ -37,29 +56,18 @@ ul
         background-color: #201754;
     }
 </style>
-
-	<h1>Welcome to the Forum</h1>
-	<h2><b></b></h2>
-</head>
-
-<hr>
-<body style="background-color: #532197">
-	<ul style="border-style: outset" >
-		<li><a  href="/" style="color: white" >Home</a></li>
-		<li><a href="static/game.html" style="color: white">Play Game</a></li>
-		<li><a  href="static/aboutus.html" style="color: white">About Us</a></li>
-		<li><a class="active" href="/forum" style="color: white">Forum</a></li>
-		<li><a href="/standings" style="color: white">Standings</a></li>
-		<li><a href="static/ProfilePage.html" style="color: white">Your Profile</a></li>
-
+<div class="login">
 	{{#if user}}
 	<form action="/logout" method="POST">
+	<div class= "logoutbtn">
     	<button type="submit">logout</button>
+		</div>
 	</form>
 	{{else}}
+	<div class="loginbtns">
 		<a href="/register">register</a> <a href="/login">login</a>
+		</div>
 	{{/if}}
-
 	</ul>
 	<center>
 
@@ -82,6 +90,6 @@ ul
 		<h1>Login to see forum</h1>
 	{{/if}}
 	</center>
-
+</div>
 </body>
 </html>
