@@ -10,7 +10,7 @@ export function startGame() {
     myScore = new component("30px", "Consolas", "black", 280, 40, "text");
     myGameArea.start();
 }
-
+//test comment
 var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
