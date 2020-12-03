@@ -89,7 +89,20 @@ script {
 .gamebtn button{
     position: relative;
     top: 150px;
-    left: 700px;
+    left: 650px;
+}
+
+.gamebutton {
+    background-color: #eceddd;
+    padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  color:  #bf92bf;
+  border-color: #bf92bf;
 }
  .login {
     position: relative;
