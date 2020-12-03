@@ -17,11 +17,14 @@
     <li><a href="/standings">Standings</a></li>
 	<li><a href="/profile">Profile</a></li>
     <li><a href="/forum">Forum</a></li>
-    
+
     </ul>
   </nav>
+  <main>
+            <div class="gamebtn">
+        <button class="gamebutton" onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.08)">JUMP</button>
+    </div>
 <div class="Gamelog">
-    <h1>Please login to play the game</h1>
     {{#if user}}
 	<form action="/logout" method="POST">
     	<button type="submit">logout</button>
@@ -201,9 +204,11 @@
             </div> 
             
 	{{else}}
+    <h1>Please login to play the game</h1>
 		<a href="/register">register</a> <a href="/login">login</a>
 	{{/if}}
     </ul>
     </div>
+    </main>
 </body>
 </html>
