@@ -86,7 +86,11 @@ script {
      border: solid#eceddd 5px;
      background-color: #bf92bf;
  }
-
+.gamebtn button{
+    position: relative;
+    top: 150px;
+    left: 700px;
+}
  .login {
     position: relative;
     top: 350px;
