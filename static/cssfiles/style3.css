@@ -89,3 +89,26 @@ script {
     left: 400px;
     width: 50%;
  }
+ h2 {
+     font-weight: Bold;
+     font-style: italic;
+     font-size: 75px;
+     text-align: center;
+     position: relative;
+    top: 250px;
+    left: 400px;
+    width: 50%;
+    color: pink
+ }
+
+ h3{
+    font-weight: Bold;
+    font-style: italic;
+    font-size: 75px;
+    text-align: center;
+    position: relative;
+    top: 300px;
+    left: 400px;
+    width: 50%;
+    color: pink
+ }
