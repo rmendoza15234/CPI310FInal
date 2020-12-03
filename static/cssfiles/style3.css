@@ -131,3 +131,9 @@ script {
 
  }
 
+.contentProfile{
+    position: relative;
+     top: 150px;
+     left: 400px;
+     width: 50%;
+}
