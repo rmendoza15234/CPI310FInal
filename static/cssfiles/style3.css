@@ -122,7 +122,7 @@ script {
 .hInfo {
     text-align:center;
     position:center;
-    font-size: 32;
+    font-size: 36;
 }
 
 
@@ -133,6 +133,13 @@ script {
  }
 
 .contentProfile{
+    position: relative;
+     top: 150px;
+     left: 400px;
+     width: 50%;
+}
+
+.standings{
     position: relative;
      top: 150px;
      left: 400px;
