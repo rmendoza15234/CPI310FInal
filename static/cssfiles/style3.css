@@ -120,6 +120,7 @@ script {
  }
 
 .hInfo {
+<<<<<<< HEAD
     position:center;
 }
 =======
@@ -129,4 +130,4 @@ script {
     background-image: url("bg.jpg");
 
  }
->>>>>>> Stashed changes
+
