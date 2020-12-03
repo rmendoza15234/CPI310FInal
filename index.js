@@ -69,7 +69,7 @@ app.get("/standings", async (req, res) => {
         Users.username as authorName
         FROM Messages LEFT JOIN Users WHERE Messages.authorId = Users.id;`); //grabs all the messages along with the user who posted the message
 
-    res.render("standings", { user: req.user }); //renders the standings page
+    res.render("standings", { messages: messages, user: req.user }); //renders the standings page
 });
 
 app.get("/profile", async (req, res) => {
