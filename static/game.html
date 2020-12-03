@@ -5,50 +5,81 @@
         <link href="cssfiles/style.css" rel = "stylesheet" type ="text/css">
         
     </head>
-    <body style="background-color: #532197" id="border" id="font_body" onload="startGame()">
+    <body style="background-color: #532197" id="border" id="font_body" >
         <div>
+            <button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.08)">JUMP</button>
         <ul style="background-color: #201754" id="border">
-            <li><a  href="/" style="color: white" >Home</a></li>
-            <li><a class="active" href="game.html" style="color: white">Play Game</a></li>
+            <li><a  href="index.html" style="color: white" >Home</a></li>
+            <li><a class="active" href="game.html" style="color: white">Game Page</a></li>
             <li><a  href="aboutus.html" style="color: white">About Us</a></li>
-            <li><a href="/forum" style="color: white">Forum</a></li>
-            <li><a href="/standings" style="color: white">Standings</a></li>
+            <li><a href="about.html" style="color: white">About The Project</a></li>
+            <li><a href="specifications.html" style="color: white">Specifications</a></li>
             <li><a href="ProfilePage.html" style="color: white">Your Profile</a></li>
         </ul>
+        
     </div>
         <div>
             <br>
-            <button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">ACCELERATE</button>
-                <p>Use the ACCELERATE button to stay in the air</p>
-                <p>How long can you stay alive?</p>
-           <div class = "Game">
-           <script>
+            
 
-                var myGamePiece;
-                var myObstacles = [];
-                var myScore;
+            <script>
+
+                //the player object
+                var flappyBird;
+
+                var flappyBeak;
+                //array of all the pipes to be generated
+                var pipes = [];
+                //score to keep track of points
+                var score;
                 
-                function startGame() {
-                    myGamePiece = new component(30, 30, "red", 10, 120);
-                    myGamePiece.gravity = 0.05;
-                    myScore = new component("30px", "Consolas", "black", 280, 40, "text");
+                //this function will load all the components when the page loads
+                function startGame() 
+                {
+                    //creating the flappy bird player
+                    flappyBird = new component(30, 30, "yellow", 10, 120);
+                    flappyBeak = new component(20, 15, "orange", 40, 135);
+
+                    //gravity pulling down
+                    flappyBird.gravity = 0.05;
+                    flappyBeak.gravity = 0.05;
+                    //creating the score component
+                    score = new component("32px", "Times", "black", 280, 40, "text");
+                    //this will start the game
                     myGameArea.start();
                 }
-                
-                var myGameArea = {
+                //creating the game area
+                var myGameArea = 
+                {
+                    //canvas is where the game is drawn
                     canvas : document.createElement("canvas"),
-                    start : function() {
-                        this.canvas.width = 480;
+                    start : function() 
+                    {
+                        //width of the canvas
+                        this.canvas.width = 720;
+                        //height of the canvas
                         this.canvas.height = 450;
+                        //this defines the game as 2d
                         this.context = this.canvas.getContext("2d");
                         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+                        //start at the first frame
                         this.frameNo = 0;
+                        //internal is updated
                         this.interval = setInterval(updateGameArea, 20);
                         },
-                    clear : function() {
+                    clear : function() 
+                    {
                         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
                     }
                 }
+                let isStarted = 0;
+                if(isStarted == 0)
+                {
+                    startGame();
+                    isStarted = 1;
+                }
+            
+                
                 
                 function component(width, height, color, x, y, type) {
                     this.type = type;
@@ -104,8 +135,9 @@
                 
                 function updateGameArea() {
                     var x, height, gap, minHeight, maxHeight, minGap, maxGap;
-                    for (i = 0; i < myObstacles.length; i += 1) {
-                        if (myGamePiece.crashWith(myObstacles[i])) {
+                    for (i = 0; i < pipes.length; i += 1) {
+                        if (flappyBird.crashWith(pipes[i])) 
+                        {
                             return;
                         } 
                     }
@@ -119,17 +151,19 @@
                         minGap = 50;
                         maxGap = 200;
                         gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
-                        myObstacles.push(new component(10, height, "green", x, 0));
-                        myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
+                        pipes.push(new component(40, height, "green", x, 0));
+                        pipes.push(new component(40, x - height - gap, "green", x, height + gap));
                     }
-                    for (i = 0; i < myObstacles.length; i += 1) {
-                        myObstacles[i].x += -1;
-                        myObstacles[i].update();
+                    for (i = 0; i < pipes.length; i += 1) {
+                        pipes[i].x += -1;
+                        pipes[i].update();
                     }
-                    myScore.text="SCORE: " + myGameArea.frameNo;
-                    myScore.update();
-                    myGamePiece.newPos();
-                    myGamePiece.update();
+                    score.text="SCORE: " + myGameArea.frameNo;
+                    score.update();
+                    flappyBird.newPos();
+                    flappyBeak.newPos();
+                    flappyBird.update();
+                    flappyBeak.update();
                 }
                 
                 function everyinterval(n) {
@@ -138,12 +172,12 @@
                 }
                 
                 function accelerate(n) {
-                    myGamePiece.gravity = n;
+                    flappyBird.gravity = n;
+                    flappyBeak.gravity = n;
                 }
                 </script>    
-                
                 <br>
             </div> 
-
+            
     </body>
 </html>

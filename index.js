@@ -20,7 +20,7 @@ export const dbPromise = open({ //exporting dbPromise to use in auth.js
 });
 
 const app = express(); //express object used to interact with express functionalities
-const port = 8080;
+const port = 8000;
 
 app.engine("handlebars", exphbs()); //handlebars setup
 app.set("view engine", "handlebars");
