@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html>
+
+	<head> 
+        <title>Home</title>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+		<link href="static/cssfiles/index.css" rel = "stylesheet" type ="text/css">
+        <link href="static/cssfiles/navstyle.css" rel = "stylesheet" type ="text/css">
+
+	<title> CPI 310 GROUP 3 PROJECT  </title>
+	
+		
+		<h1>Not Fire-Boy and Water-Girl</h1>
+		<h2><b>Navigation Page</b></h2>
+        <ul style="border-style: outset" id="bg_nav">
+            <li><a  class="active" href="/" style="color: white" >Home</a></li>
+            <li><a href="static/game.html" style="color: white">Play Game</a></li>
+            <li><a  href="static/aboutus.html" style="color: white">About Us</a></li>
+            <li><a href="/forum" style="color: white">Forum</a></li>
+            <li><a href="/standings" style="color: white">Standings</a></li>
+            <li><a href="static/ProfilePage.html" style="color: white">Your Profile</a></li>
+
+    {{#if user}}
+	<form action="/logout" method="POST">
+    	<button type="submit">logout</button>
+	</form>
+	{{else}}
+		<a href="/register">register</a> <a href="/login">login</a>
+	{{/if}}
+
+        </ul>
+		<hInfo>
+		<br><i>A co-op,</i></br>
+		<br><i>platforming</i></br>
+		<br><i>and adventurous</i></br>
+		<br><i>experience!</i></br></hInfo>
+		
+		
+	</head>
+	<hr>
+	<body >
+
+		<hr>
+		<img src="static/photos/FireboyWaterGirl.jpg" alt="Galaxy" width="500">
+		
+		<hr>
+		
+		</a>
+
+</body>	
+</html>
+

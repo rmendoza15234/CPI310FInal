@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Forum</title>
+	<link rel="stylesheet" type="text/css" href="static/cssfiles/navstyle.css">
+<style>
+h1 {
+	text-align: center;
+	background-color: #cfb209;
+	box-sizing: border-box;
+    border: 3px solid white;
+	color: white;	
+}
+h2 {
+	color:white;
+	text-align: center;
+	font-style:Arial;	
+	font-family: Calibri;
+	font-size: 30;
+}
+body {
+	color:black;
+	text-align: center;
+	border-style: groove;
+	border-radius: 25px;
+}
+p {	
+	color: white;
+	font-style:Arial;
+	font-family:Calibri;
+	font-size:25px;
+	margin-left: 500px;
+	margin-right: 500px;
+}
+ul
+    {
+        background-color: #201754;
+    }
+</style>
+
+	<h1>Welcome to the Forum</h1>
+	<h2><b></b></h2>
+</head>
+
+<hr>
+<body style="background-color: #532197">
+	<ul style="border-style: outset" >
+		<li><a  href="/" style="color: white" >Home</a></li>
+		<li><a href="static/game.html" style="color: white">Play Game</a></li>
+		<li><a  href="static/aboutus.html" style="color: white">About Us</a></li>
+		<li><a class="active" href="/forum" style="color: white">Forum</a></li>
+		<li><a href="/standings" style="color: white">Standings</a></li>
+		<li><a href="static/ProfilePage.html" style="color: white">Your Profile</a></li>
+
+	{{#if user}}
+	<form action="/logout" method="POST">
+    	<button type="submit">logout</button>
+	</form>
+	{{else}}
+		<a href="/register">register</a> <a href="/login">login</a>
+	{{/if}}
+
+	</ul>
+	<center>
+
+	{{#if user}}
+	<h1>Post to the forum below</h1>
+	<ul>
+    	{{#each messages}}
+    	<li>{{this.authorName}}: {{this.content}}</li>
+    	{{/each}}
+	</ul>
+	<form action="/message" method="POST">
+    	<input type="text" placeholder="message" name="message" />
+    	<button type="submit">send</button>
+	</form>
+
+	<form action="/logout" method="POST">
+    	<button type="submit">logout</button>
+	</form>
+	{{else}}
+		<h1>Login to see forum</h1>
+	{{/if}}
+	</center>
+
+</body>
+</html>

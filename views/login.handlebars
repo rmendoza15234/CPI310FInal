@@ -1,0 +1,14 @@
+{{#if error}}
+<div style="background: maroon; color: white;">
+    {{error}}
+</div>
+{{/if}}
+
+<h1>Login</h1>
+<a href="/register">register</a> <a href="/">home</a>
+
+<form action="/login" method="POST">
+    <input type="email" placeholder="email" name="email" />
+    <input type="password" placeholder="password" name="password" />
+    <button type="submit">login</button>
+</form>

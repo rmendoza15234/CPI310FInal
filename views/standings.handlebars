@@ -1,0 +1,32 @@
+<DOCTYPE! html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="static/cssfiles/navstyle.css">
+        <link rel="stylesheet" type="text/css" href="static/cssfiles/style.css">
+        <title>Standings</title>
+
+    </head>
+
+<body style="background-color: #532197" id="border" id="font_body">
+
+    <h1>Welcome to the Standings Page</h1>
+
+    <ul style="border-style: outset" id="bg_nav">
+    <li><a  class="active" href="/" style="color: white" >Home</a></li>
+    <li><a href="static/game.html" style="color: white">Play Game</a></li>
+    <li><a  href="static/aboutus.html" style="color: white">About Us</a></li>
+    <li><a href="/forum" style="color: white">Forum</a></li>
+    <li><a href="/standings" style="color: white">Standings</a></li>
+    <li><a href="static/ProfilePage.html" style="color: white">Your Profile</a></li>
+
+    {{#if user}}
+	<form action="/logout" method="POST">
+    	<button type="submit">logout</button>
+	</form>
+	{{else}}
+		<a href="/register">register</a> <a href="/login">login</a>
+	{{/if}}
+
+    </ul>
+</body>
+</html>

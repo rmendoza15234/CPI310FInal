@@ -1,0 +1,160 @@
+* {
+	margin: 5px;
+	padding: 8px;
+	box-sizing: border-box;
+}
+title
+{
+    color: white;
+}
+body {
+	background: #532197;
+	box-sizing: border-box;
+}
+
+.jumbotron {
+	text-align: center;
+	background: #201754;
+	border: 3px solid white;
+}
+ 
+.description {
+	text-align: center;
+}
+
+.Milestones {
+	text-align: center;
+	margin: auto;
+	background: #201754;
+	border: 5px solid #cfb209;
+	height: 315px;
+ 	max-width: 500px;
+ 	position: relative;
+ 	right: 0px;
+ 	font-family:Calibri;
+}
+
+.TeamSchedule{
+	text-align: center;
+	margin: auto;
+	background: #201754;
+	border: 5px solid #cfb209;
+	height: 225px;
+ 	max-width: 500px;
+ 	position: relative;
+ 	left: 0px;
+ 	font-family:Calibri;
+}
+
+.TimePermits{
+	text-align: center;
+	padding: auto;
+	margin: auto;
+	background: #201754;
+	border: 5px solid #cfb209;
+ 	max-width: 500px;
+ 	position: relative;
+ 	font-family:Calibri;
+	font-size:25px;
+}
+
+.LocalMultiplayer{
+	text-align: center;
+	margin: auto;
+	background: #201754;
+	border: 5px solid #cfb209;
+	height: 150px;
+ 	max-width: 500px;
+ 	position: absolute;
+ 	left: 0px;
+}
+
+.Universal {
+	text-align: center;
+	margin: auto;
+	background: #201754;
+	border: 5px solid #cfb209;
+	height: 150px;
+ 	max-width: 500px;
+ 	position: absolute;
+ 	right: 0px;
+}
+
+.Fireboy {
+	display: block;
+  	margin-left: 0;
+  	margin-right: auto;
+}
+.DisProgress {
+	text-align: center;
+	margin: auto;
+	background: #201754;
+	border: 5px solid #cfb209;
+	height: 150px;
+ 	max-width: 500px;
+ 	position: relative;
+ 	font-family:Calibri;
+}
+
+.Enemy {
+	text-align: center;
+	margin: auto;
+	background: #201754;
+	border: 5px solid #cfb209;
+	height: 125px;
+ 	max-width: 500px;
+ 	position: relative;
+ 	font-family:Calibri;
+}
+
+.Lost {
+	text-align: center;
+	margin: auto;
+	background: #201754;
+	border: 5px solid #cfb209;
+	height: auto;
+ 	max-width: 500px;
+ 	position: relative;
+ 	font-family:Calibri;
+ 	font-weight: bold;
+}
+.ItemsLost {
+	text-align: center;
+	margin: auto;
+	background: #201754;
+	border: 5px solid #cfb209;
+	height: 150px;
+ 	max-width: 500px;
+ 	position: relative;
+ 	font-family:Calibri;
+}
+h1
+{
+	text-align: center;
+background-color: #cfb209;
+box-sizing: border-box;
+border: 3px solid white;
+color: white;
+}
+h5 {
+	font-weight: bold;
+}
+h6 {
+	font-weight: bold;
+}
+p2 {	
+	color: white;
+
+	font-family:Calibri;
+	font-size:25px;
+	margin-left: 500px;
+	margin-right: 500px;
+
+p1 {
+	color: white;
+
+	font-family:Calibri;
+	font-size:25px;
+	margin-left: 500px;
+	margin-right: 500px;
+}
