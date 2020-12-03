@@ -119,5 +119,6 @@ script {
  }
 
 .hInfo {
-    position:center;
+    position: center;
+    text-align: center;
 }
