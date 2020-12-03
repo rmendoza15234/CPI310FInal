@@ -76,13 +76,14 @@ app.get("/game", async (req, res) => {
 app.get("/standings", async (req, res) => {
     //read messages from the database
     const db = await dbPromise;
-    const messages = await db.all(`SELECT
-        Messages.id,
-        Messages.content,
-        Users.username as authorName
-        FROM Messages LEFT JOIN Users WHERE Messages.authorId = Users.id;`); //grabs all the messages along with the user who posted the message
+    const scores = await db.all(`SELECT
+        Scores.id,
+        Scores.score,
+        Users.username as playerName
+        FROM Scores LEFT JOIN Users WHERE Scores.playerId = Users.id;`); //grabs all the messages along with the user who posted the message
+    console.log("scores", scores);
 
-    res.render("standings", { messages: messages, user: req.user }); //renders the standings page
+    res.render("standings", { scores: scores, user: req.user }); //renders the standings page
 });
 
 app.get("/profile", async (req, res) => {
@@ -190,6 +191,18 @@ app.post("/message", async (req, res) => {
     const db = await dbPromise;
     await db.run("INSERT INTO Messages (content, authorId) VALUES (?, ?);", req.body.message, req.user.id); 
     res.redirect("/forum");
+});
+
+app.post("/addScore", async (req, res) => {
+    if(!req.user)
+    {
+        res.status(401); //code for not being logged in
+        return res.send("must be logged in to post to the message board"); //error message if the user tries to send a message without being logged in
+    }
+    //write messsages to the database
+    const db = await dbPromise;
+    await db.run("INSERT INTO Scores (score, playerId) VALUES (?, ?);", req.body.addScore, req.user.id); 
+    res.redirect("/standings");
 });
 
 app.post("/logout", (req, res) => { //logout function

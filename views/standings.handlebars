@@ -26,23 +26,45 @@
     </ul>
   </nav>
 <div class = "standings">
-  <h1>Here are the standings</h1>
 
-    {{#if user}}
+	{{#if user}}
+	<form action="/logout" method="POST">
+	<div class= "logoutbtn">
+    	<button type="submit">logout</button>
+		</div>
+	</form>
+	{{else}}
+	<div class="loginbtns">
+		<a href="/register">register</a> <a href="/login">login</a>
+		</div>
+	{{/if}}
+	</ul>
+
+	{{#if user}}
+  <table style="width:100%">
+    <tr>
+      <th>User</th>
+      <th>Score</th> 
+    </tr>
+    {{#each scores}}
+        <tr>
+            <td>{{this.playerName}}</td>
+            <td>{{this.score}}</td>
+        </tr>
+    {{/each}}
+  </table>
+
+	<form action="/addScore" method="POST">
+    	<input type="text" placeholder="addScore" name="addScore" />
+    	<button type="submit">send</button>
+	</form>
+
 	<form action="/logout" method="POST">
     	<button type="submit">logout</button>
 	</form>
 	{{else}}
-		<a href="/register">register</a> <a href="/login">login</a>
+		<h1>Login to see the standings</h1>
 	{{/if}}
-
-  <table style="width:100%">
-  <tr>
-  {{#each messages}}  	
-    <td>{{this.authorName}}</td>
-    <td>{{this.content}}</td>
-  </tr>
-  {{/each}}
 </table>
 </div>
     </ul>
