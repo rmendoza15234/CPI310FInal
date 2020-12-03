@@ -1,23 +1,26 @@
-<DOCTYPE! html>
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="static/cssfiles/navstyle.css">
-        <link rel="stylesheet" type="text/css" href="static/cssfiles/style.css">
-        <title>Standings</title>
-
-    </head>
-
-<body style="background-color: #532197" id="border" id="font_body">
-
-    <h1>Welcome to the Standings Page</h1>
-
-    <ul style="border-style: outset" id="bg_nav">
-    <li><a  class="active" href="/" style="color: white" >Home</a></li>
-    <li><a href="static/game.html" style="color: white">Play Game</a></li>
-    <li><a  href="static/aboutus.html" style="color: white">About Us</a></li>
-    <li><a href="/forum" style="color: white">Forum</a></li>
-    <li><a href="/standings" style="color: white">Standings</a></li>
-    <li><a href="static/ProfilePage.html" style="color: white">Your Profile</a></li>
+<!DOCTYPE html> 
+<html lang="en">
+	<head>
+		<meta charset = "UTF-8">
+		<meta name="viewport" content="width-device-width, initial-scale-1.0">
+		<title> Home Page </title>
+		<link rel="stylesheet" type="text/css" href="static/cssfiles/style3.css">
+	  </head>
+      <br>
+      <body>
+        <div class="pic">
+          <img src="photos/Background.jpg">
+        </div>
+    
+  <nav class = "navbar">
+    <a href = "static/ProfilePage.html" class = "logo"> Duck Dumper </a>
+    <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="static/aboutus.html">About Us</a></li>
+    <li><a href="static/game.html">Game</a></li>
+    <li><a href="/forum">Forum</a></li>
+    </ul>
+  </nav>
 
     {{#if user}}
 	<form action="/logout" method="POST">
