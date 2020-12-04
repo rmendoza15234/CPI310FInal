@@ -13,7 +13,6 @@ import sqlite3 from "sqlite3"; //importing sqlite
 import { open } from "sqlite";
 
 import { grantAuthToken, lookupUserFromAuthToken } from "./auth";
-/*import { score } from "./game";*/
 
 export const dbPromise = open({ //exporting dbPromise to use in auth.js
     filename: "data.db",
@@ -62,7 +61,7 @@ app.get("/", async (req, res) => {
 });
 
 app.get("/game", async (req, res) => {
-    //read messages from the database
+    //read scores from the database
     const db = await dbPromise;
     const messages = await db.all(`SELECT
         Messages.id,
@@ -87,9 +86,9 @@ app.get("/standings", async (req, res) => {
 });
 
 app.get("/profile", async (req, res) => {
-    if(!req.user)
+    if(!req.user) //checks if the user is not logged in
     {
-        return res.redirect("/"); //redirects to home to prevent registered users from registering again
+        return res.redirect("/"); //redirects to home
     }
 
     //read scores from the database
