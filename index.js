@@ -92,11 +92,13 @@ app.get("/profile", async (req, res) => {
     const scores = await db.all(`SELECT
         Scores.id,
         Scores.score,
-        Users.username as playerName
+        Users.username as playerName,
+        Users.email as playerEmail,
+        Users.password as playerPassword
         FROM Scores LEFT JOIN Users WHERE Scores.playerId = Users.id;`); //grabs all of the scores along with the user
     console.log("profile", scores);
 
-    res.render("profile", { scores: scores, user: req.user }); //renders the standings page
+    res.render("profile", { scores: scores, user: req.user, email: req.user.email, password: req.user.password }); //renders the standings page
 });
 
 app.get("/forum", async (req, res) => {
