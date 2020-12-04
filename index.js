@@ -87,6 +87,11 @@ app.get("/standings", async (req, res) => {
 });
 
 app.get("/profile", async (req, res) => {
+    if(!req.user)
+    {
+        return res.redirect("/"); //redirects to home to prevent registered users from registering again
+    }
+
     //read scores from the database
     const db = await dbPromise;
     const scores = await db.all(`SELECT
