@@ -6,7 +6,13 @@
 		<title>Standings</title>
 		<link rel="stylesheet" type="text/css" href="static/cssfiles/style3.css">
     <style>
-        
+        h2{
+			color:#eceddd;
+			text-align: center;
+			font-style:Arial;	
+			font-family: Calibri;
+			font-size: 30;
+		}
 </style>
 	  </head>
       <br>
@@ -25,18 +31,15 @@
 <div class = "standings">
 
 	{{#if user}}
-	<form action="/logout" method="POST">
-	<div class= "logoutbtn">
-    	<button type="submit">logout</button>
-		</div>
+	
 	</form>
 	{{else}}
 	<div class="loginbtns">
-		<a href="/register">register</a> <a href="/login">login</a>
+		<a href="/register">Register</a> <a href="/login">Login</a>
 		</div>
 	{{/if}}
 	</ul>
-
+<h2>Standings</h2>
 	{{#if user}}
   <table style="width:100%">
     <tr>
@@ -50,14 +53,14 @@
         </tr>
     {{/each}}
   </table>
-
-	<form action="/addScore" method="POST">
-    	<input type="text" placeholder="addScore" name="addScore" />
-    	<button type="submit">send</button>
+<br>
+	<form action="/addScore" method="POST" style="text-align: center;">
+    	<input type="text" placeholder="Add a score" name="addScore" />
+    	<button type="submit">Send</button>
 	</form>
-
-	<form action="/logout" method="POST">
-    	<button type="submit">logout</button>
+<br>
+	<form action="/logout" method="POST" style="text-align: center;">
+    	<button type="submit">Logout</button>
 	</form>
 	{{else}}
 		<h1>Login to see the standings</h1>
