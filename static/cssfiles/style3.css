@@ -200,3 +200,10 @@ script {
     position: relative;
     color: white;
 }
+
+.registrations {
+    position: relative;
+     top: 150px;
+     left: 400px;
+     
+}
