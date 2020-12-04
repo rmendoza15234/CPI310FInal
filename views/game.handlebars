@@ -193,17 +193,21 @@
                         var otherright = otherobj.x + (otherobj.width); //other right is the x pos + the width of the other object
                         var othertop = otherobj.y; //the top of the other object is at the y position
                         var otherbottom = otherobj.y + (otherobj.height); //the bottom of the other object is at the y pos + the height
-                        var crash = true;// setting crash bool to true
+                        var crash = true; // setting crash bool to true
+                        //conditionals for whether things are colliding or not
                         if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) 
                         {
                             crash = false;
                         }
+                        //return current state of crash
                         return crash;
                     }
                 }
                 //**************************************************************************
                 
-                function updateGameArea() {
+                //******************* UPDATE GAME AREA FUNCTION
+                function updateGameArea() 
+                {
                     var x, height, gap, minHeight, maxHeight, minGap, maxGap;
                     for (i = 0; i < pipes.length; i += 1) {
                         if (flappyBird.crashWith(pipes[i])) 
@@ -235,18 +239,29 @@
                     flappyBird.update();
                     flappyBeak.update();
                 }
-                
+                //******************************************************
+
+                //*******FUNCTION FOR EVERY INTERVAL
                 function everyinterval(n) 
                 {
-                    if ((scene.frameNo / n) % 1 == 0) {return true;}
+                    //if the frame divided by the current interval is divisible by 1 then return true
+                    if ((scene.frameNo / n) % 1 == 0) 
+                    {
+                        return true;
+                    }
+
                     return false;
                 }
+                //*****************************
                 
+                //******** FUNCTION ACCELERATE
                 function accelerate(n) 
                 {
+                    //setting the gravity of both the bird and beak
                     flappyBird.gravity = n;
                     flappyBeak.gravity = n;
                 }
+                //*************************
                 //SOURCE: https://www.w3schools.com/graphics/game_intro.asp
                 </script>    
                 <br>
