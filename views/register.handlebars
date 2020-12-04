@@ -1,9 +1,29 @@
-{{#if error}}
+<!DOCTYPE html> 
+<html lang="en">
+	<head>
+		<meta charset = "UTF-8">
+		<meta name="viewport" content="width-device-width, initial-scale-1.0">
+		<title>Profile</title>
+		<link rel="stylesheet" type="text/css" href="static/cssfiles/style3.css">
+	  </head>
+      <br>
+      <body>
+  <nav class = "navbar">
+    <a href = "static/ProfilePage.html" class = "logo"> JUMPING JAYBIRD  </a>
+    <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="static/aboutus.html">About Us</a></li>
+    <li><a href="/game">Game</a></li>
+    <li><a href="/standings">Standings</a></li>
+    <li><a href="/forum">Forum</a></li>
+    </ul>
+  </nav>
+  {{#if error}}
 <div style="background: maroon; color: white;">
     {{error}}
 </div>
 {{/if}}
-
+<div class="registration">
 <h1>Register</h1>
 <a href="/">home</a> <a href="/login">login</a>
 
@@ -13,3 +33,4 @@
     <input type="password" placeholder="password" name="password" />
     <button type="submit">register</button>
 </form>
+</div>
