@@ -202,7 +202,12 @@
                 </script>    
                 <br>
             </div> 
-            
+    <br>
+	<form action="/addScore" method="POST" style="text-align: center;">
+    	<input type="text" placeholder="Add a score" name="addScore" />
+    	<button type="submit">Send</button>
+	</form>
+    <br>
 	{{else}}
     <h1>Please login to play the game</h1>
 		<a href="/register">register</a> <a href="/login">login</a>
