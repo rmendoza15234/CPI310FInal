@@ -188,3 +188,7 @@ script {
      left: 400px;
      width: 50%;
 }
+
+.textarea {
+    text-align: center;
+}
