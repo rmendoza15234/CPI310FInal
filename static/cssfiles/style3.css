@@ -192,3 +192,11 @@ script {
 .textarea {
     text-align: center;
 }
+
+.textarea a{
+    font-style: italic;
+    font-size: 25px;
+    text-align: center;
+    position: relative;
+    color: white;
+}
