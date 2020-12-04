@@ -80,7 +80,7 @@ app.get("/standings", async (req, res) => {
         Scores.id,
         Scores.score,
         Users.username as playerName
-        FROM Scores LEFT JOIN Users WHERE Scores.playerId = Users.id;`); //grabs all of the scores along with the user
+        FROM Scores LEFT JOIN Users WHERE Scores.playerId = Users.id ORDER BY Scores.score DESC;`); //grabs all of the scores along with the user
     console.log("scores", scores);
 
     res.render("standings", { scores: scores, user: req.user }); //renders the standings page
