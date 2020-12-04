@@ -77,7 +77,7 @@ app.get("/game", async (req, res) => {
 app.get("/standings", async (req, res) => {
     //read scores from the database
     const db = await dbPromise;
-    const scores = await db.all(`SELECT
+    const scores = await db.all(`SELECT TOP 3
         Scores.id,
         Scores.score,
         Users.username as playerName
