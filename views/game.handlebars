@@ -3,34 +3,31 @@
 	<head>
 		<meta charset = "UTF-8">
 		<meta name="viewport" content="width-device-width, initial-scale-1.0">
-		<title>Profile</title>
+		<title>Game</title>
 		<link rel="stylesheet" type="text/css" href="static/cssfiles/style3.css">
 	  </head>
       <br>
       <body>
   <nav class = "navbar">
-    <a href = "static/ProfilePage.html" class = "logo"> JUMPING JAYBIRD  </a>
+    <a href = "static/ProfilePage.html" class = "logo"> JUMPING JAYBIRD  </a> <!-- the navbar and the easter egg included into it-->
     <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="static/aboutus.html">About Us</a></li>
-    <li><a href="/game">Game</a></li>
-    <li><a href="/standings">Standings</a></li>
-	<li><a href="/profile">Profile</a></li>
-    <li><a href="/forum">Forum</a></li>
+    <li><a href="/">Home</a></li> <!-- the link to the home page -->
+    <li><a href="static/aboutus.html">About Us</a></li> <!-- the link to the about us page --> 
+    <li><a href="/standings">Standings</a></li>  <!-- the link to the standings page -->
+	<li><a href="/profile">Profile</a></li> <!-- the link to the profile page -->
+    <li><a href="/forum">Forum</a></li> <!-- the link to the forum page -->
 
     </ul>
   </nav>
   <main>
-<div class="Gamelog">
-    {{#if user}}
+<div class="Gamelog"> <!-- div class for styling purposes -->
+    {{#if user}}  <!-- checks if you are a user logged in -->
 	
-    <div class="gamebtn" >
+    <div class="gamebtn" > <!-- div class for styling purposes -->
         <button class="gamebutton" onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.08)" style="text-align: center;">JUMP</button>
     </div>
     <div>
             <br>
-            
-
             <script>
 
                 //**************  DECLARING VARIABLES
@@ -284,17 +281,17 @@
             box-sizing: border-box;
             text-align: center;
         }
-    </style>
-	<form action="/addScore" method="POST" style="text-align: center;">
+    </style> 
+	<form action="/addScore" method="POST" style="text-align: center;"> <!-- the index.js info and queries and entered scores -->
     	<input type="text" placeholder="Add a score" name="addScore" height="10px" id="input_area"/>
-    	<button type="submit" id="input_box" style="text-align: center;">Send</button>
+    	<button type="submit" id="input_box" style="text-align: center;">Send</button> <!-- sends info to data.db -->
 	</form>
     <br>
     <br>
-	{{else}}
-    <div class="registrations">
+	{{else}} <!-- if not recognized as user than it is changed to make them register or login -->
+    <div class="registrations"><!-- div class for styling purposes -->
     <h1>Please login to play the game</h1>
-    <div class="textarea">
+    <div class="textarea"><!-- div class for styling purposes -->
 		<a href="/register">Register</a> <a href="/login">Login</a>
 	{{/if}}
     </ul>

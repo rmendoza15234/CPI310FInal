@@ -3,8 +3,10 @@
     margin: 0;
     box-sizing: border-box;
 }
-
-table
+/*
+the tables css
+*/
+table 
 {
     border: solid#eceddd 5px;
     text-align: center;
@@ -17,6 +19,9 @@ tr, td
     border-radius: 5px;
     padding-bottom: 5px;
 }
+/*
+the navbar spacing and centering also the color changes
+*/
 .navbar {
     background-color:#885c8f;
     color: #000;
@@ -31,12 +36,16 @@ tr, td
     left: 0;
     font-family: 'Times New Roman', Times, serif;
 }
-
+/*
+specific stlye for the color of the text
+*/
 .navbar a {
     text-decoration: none;
     color:#eceddd;
 }
-
+/*
+the spacing and font for the logo on to left also positioning
+*/
 .navbar a.logo {
     float: left;
     height: inherit;
@@ -48,7 +57,9 @@ tr, td
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
 }
-
+/*
+position and spacing for the navbar links
+*/
 .navbar ul{
     float: right;
     list-style: none;
@@ -56,41 +67,56 @@ tr, td
     line-height: inherit;
     padding: 0 50px;
 }
-
+/*
+the organization of the navbar
+*/
 .navbar ul li {
     display: inline-block;
 }
-
+/*
+specific link styling
+*/
 .navbar ul li a{
     display: block;
     text-align: center;
     min-width: auto;
     padding: 0 30px;
 }
-
+/*
+hover affect when cursor is on it
+*/
 .navbar ul li a:hover{
     background-color: #aa78f1;
 }
-
+/*
+the image portion of the whole website
+*/
 body{
     background-color: #201754;
     background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/eba5ed4e-419f-459b-929c-058e7edd3228/dbyitzh-777bf595-781b-4d24-baf8-1a988ba9a01f.png/v1/fill/w_1192,h_670,q_70,strp/purple_city_line_background_by_hellospike_dbyitzh-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xMDgwIiwicGF0aCI6IlwvZlwvZWJhNWVkNGUtNDE5Zi00NTliLTkyOWMtMDU4ZTdlZGQzMjI4XC9kYnlpdHpoLTc3N2JmNTk1LTc4MWItNGQyNC1iYWY4LTFhOTg4YmE5YTAxZi5wbmciLCJ3aWR0aCI6Ijw9MTkyMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.Uzq51s_bqKT-hHvzo1i0XtzQave_WnpIeB3cAfOz340");
 }
-
+/*
+the spacing and centering of this certain page
+*/
 main {
     width: 50%;
     position: relative;
     top: 50px;
     left: 50px;
 }
-
+/*
+the spacing and centering of this certain page
+*/
 script {
     width: 100%;
     position: bottom;
     top: 100px;
     left: 100px;
 }
- canvas
+/*
+the spacing and centering of this certain page
+*/
+canvas
  {
      position: relative;
      top: 150px;
@@ -100,12 +126,17 @@ script {
      background-color: #bf92bf;
      border-radius: 10px;
  }
+ /*
+the button positioning 
+*/
 .gamebtn button{
     position: relative;
     top: 150px;
     left: 650px;
 }
-
+/*
+the game button styling and centering 
+*/
 .gamebutton {
     background-color: #eceddd;
     padding: 15px 32px;
@@ -118,12 +149,18 @@ script {
   color:  #bf92bf;
   border-color: #bf92bf;
 }
+/*
+the spacing and centering of this certain page
+*/
  .login {
     position: relative;
     top: 350px;
     left: 400px;
     width: 50%;
  }
+ /*
+the spacing and centering of this certain page
+*/
  .profile h2 {
      font-weight: Bold;
      font-style: italic;
@@ -147,13 +184,17 @@ script {
     width: 50%;
     color: pink
  }
-
+/*
+the positioning of the home page picture
+*/
  .duckdumper{
      position: center;
      text-align: center;
      top: 500px;
  }
-
+/*
+the spacing and centering of this certain page
+*/
 .hInfo {
     text-align:center;
     position:center;
@@ -167,32 +208,42 @@ script {
     background-image: url("bg.jpg");
 
  }
-
+ /*
+ the spacing and centering of this certain page
+ */
 .contentProfile{
     position: relative;
      top: 150px;
      left: 400px;
      width: 50%;
 }
-
+/*
+ the spacing and centering of this certain page
+ */
 .standings{
     position: relative;
      top: 150px;
      left: 400px;
      width: 50%;
 }
-
+/*
+ the spacing and centering of this certain page
+ */
 .registration {
     position: relative;
      top: 150px;
      left: 400px;
      width: 50%;
 }
-
+/*
+ the spacing and centering of this certain page
+ */
 .textarea {
     text-align: center;
 }
-
+/*
+ font and position for specific writing
+ */
 .textarea a{
     font-style: italic;
     font-size: 25px;
@@ -200,7 +251,9 @@ script {
     position: relative;
     color: white;
 }
-
+/*
+ the spacing and centering of this certain page
+ */
 .registrations {
     position: relative;
      top: 150px;

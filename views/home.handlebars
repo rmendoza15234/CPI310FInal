@@ -4,20 +4,21 @@
 		<meta charset = "UTF-8">
 		<meta name="viewport" content="width-device-width, initial-scale-1.0">
 		<title> Home Page </title>
-		<link rel="stylesheet" type="text/css" href="static/cssfiles/style3.css">
+		<link rel="stylesheet" type="text/css" href="static/cssfiles/style3.css"> <!-- The styling for the navbar and majority of the handlebars
+																						and also the majority of the static htmls pages -->
 	  </head>
       <br>
       <body>
     
     
   <nav class = "navbar">
-    <a href = "static/ProfilePage.html" class = "logo"> Jumping Jaybird </a>
+    <a href = "static/ProfilePage.html" class = "logo"> Jumping Jaybird </a> <!-- the navbar and the easter egg included into it-->
     <ul>
-    <li><a href="static/aboutus.html">About Us</a></li>
-    <li><a href="/game">Game</a></li>
-    <li><a href="/standings">Standings</a></li>
-	<li><a href="/profile">Profile</a></li>
-    <li><a href="/forum">Forum</a></li>
+    <li><a href="static/aboutus.html">About Us</a></li> <!-- the link to the about us page -->
+    <li><a href="/game">Game</a></li>  <!-- the link to the the game page -->
+    <li><a href="/standings">Standings</a></li> <!-- the link to the standings page -->
+	<li><a href="/profile">Profile</a></li> <!-- the link to the profile page -->
+    <li><a href="/forum">Forum</a></li> <!-- the link to the forum page -->
     </ul>
   </nav>
         </ul>
@@ -31,24 +32,19 @@
 		
 		<img src="static/photos/CAPTURE.PNG" alt="Galaxy" width="500">
 		<br><br>
-		{{#if user}}
+		{{#if user}} <!-- checks if you are a user logged in -->
 			<form action="/logout" method="POST">
     		<button type="submit">Logout</button>
 			</form>
-		{{else}}
+		{{else}} <!-- If not logged in it will reference the login and register links -->
 			<a href="/register">Register</a> <a href="/login">Login</a>
 		{{/if}}
 		</a>
 		</div></hInfo>
 		<br></br>
 		<br></br>
-
 		</div>
-
 	</head>
-
-	<body >
-		
 </body>	
 </html>
 

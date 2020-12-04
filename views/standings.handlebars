@@ -4,7 +4,7 @@
 		<meta charset = "UTF-8">
 		<meta name="viewport" content="width-device-width, initial-scale-1.0">
 		<title>Standings</title>
-		<link rel="stylesheet" type="text/css" href="static/cssfiles/style3.css">
+		<link rel="stylesheet" type="text/css" href="static/cssfiles/style3.css"> <!-- -->
     <style>
         h2{
 			color:#eceddd;
@@ -17,46 +17,43 @@
 	  </head>
       <br>
       <body>
-       
   <nav class = "navbar">
-    <a href = "static/ProfilePage.html" class = "logo"> JUMPING JAYBIRD  </a>
+    <a href = "static/ProfilePage.html" class = "logo"> JUMPING JAYBIRD  </a> <!-- the navbar and the easter egg included into it-->
     <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="static/aboutus.html">About Us</a></li>
-    <li><a href="/game">Game</a></li>
-	  <li><a href="/profile">Profile</a></li>
-    <li><a href="/forum">Forum</a></li>
+    <li><a href="/">Home</a></li> <!-- the link to the home page -->
+    <li><a href="static/aboutus.html">About Us</a></li> <!-- the link to the about us page -->
+    <li><a href="/game">Game</a></li> <!-- the link to the game page -->
+	  <li><a href="/profile">Profile</a></li> <!-- the link to the profile page -->
+    <li><a href="/forum">Forum</a></li> <!-- the link to the forum page -->
     </ul>
   </nav>
-<div class = "standings">
+<div class = "standings"> 
 <h2>Standings</h1>
-	{{#if user}}
-	
+	{{#if user}} <!-- checks if you are a user logged in -->
 	</form>
-	{{else}}
-	
-	<div class="textarea">
+	{{else}} <!-- If you are not logged in it will make you log in or register -->
+	<div class="textarea"> <!-- div class for styling purposes -->
 		<h1>Login to see the standings</h1>
-	<div class="loginbtns">
+	<div class="loginbtns"> <!-- div class for styling purposes -->
 		<a href="/register">Register</a> <a href="/login">Login</a>
 		</div>
 		</div>
 	{{/if}}
 	</ul>
-	{{#if user}}
+	{{#if user}} <!-- if a user that is logged in then it will show standings table -->
   <table style="width:100%">
     <tr>
       <th>User</th>
       <th>Score</th> 
     </tr>
-    {{#each scores}}
+    {{#each scores}}  <!-- opens each condition to output queries -->
         <tr>
             <td>{{this.playerName}}</td>
             <td>{{this.score}}</td>
         </tr>
-    {{/each}}
+    {{/each}} <!-- closes the queries and each condition -->
   </table>
-  <br>
+  <br> <!-- when logged in gives option to logout -->
 	<form action="/logout" method="POST" style="text-align: center;">
     	<button type="submit">Logout</button>
 	</form>

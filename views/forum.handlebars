@@ -9,13 +9,13 @@
       <br>
       <body>
   <nav class = "navbar">
-    <a href = "static/ProfilePage.html" class = "logo"> Jumping Jaybird </a>
+    <a href = "static/ProfilePage.html" class = "logo"> Jumping Jaybird </a> <!-- the navbar and the easter egg included into it-->
     <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="static/aboutus.html">About Us</a></li>
-    <li><a href="/game">Game</a></li>
-    <li><a href="/standings">Standings</a></li>
-	<li><a href="/profile">Profile</a></li>
+    <li><a href="/">Home</a></li> <!-- the link to the home page -->
+    <li><a href="static/aboutus.html">About Us</a></li> <!-- the link to the about us page -->
+    <li><a href="/game">Game</a></li> <!-- the link to the game page -->
+    <li><a href="/standings">Standings</a></li> <!-- the link to the standings page -->
+	<li><a href="/profile">Profile</a></li> <!-- the link to the profile page -->
     </ul>
   </nav>
 <style>
@@ -73,7 +73,7 @@ center
 
 </style>
 <div class="login">
-	{{#if user}}
+	{{#if user}} <!-- checks if you are a user logged in -->
 	
 	</form>
 	{{else}}
@@ -84,15 +84,15 @@ center
 	</ul>
 	<center>
 
-	{{#if user}}
+	{{#if user}} <!-- checks if you are a user logged in -->
 	<h2>Post to the forum below</h2><hr>
 	<ul>
-    	{{#each messages}}
+    	{{#each messages}} <!-- if user is logged in will show contents and fucntionality of the forum page -->
     	<li id="li_hi">{{this.authorName}}: {{this.content}}</li>
 		<hr>
-    	{{/each}}
+    	{{/each}} <!-- closes the functionalitu pulled form index.js -->
 	</ul>
-	<br>
+	<br><!-- If you are logged in it will show the forum page and the logout -->
 	<form action="/message" method="POST">
     	<input type="text" placeholder="Message" name="message" />
     	<button type="submit">Send</button>
@@ -102,7 +102,7 @@ center
     	<button type="submit">Logout</button>
 	</form>
 	{{else}}
-		<h1>Login to see forum</h1>
+		<h1>Login to see forum</h1> <!-- If not logged in it will show this message -->
 	{{/if}}
 	</center>
 </div>

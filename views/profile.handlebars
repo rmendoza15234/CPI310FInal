@@ -9,40 +9,40 @@
       <br>
       <body>
   <nav class = "navbar">
-    <a href = "static/ProfilePage.html" class = "logo"> JUMPING JAYBIRD  </a>
+    <a href = "static/ProfilePage.html" class = "logo"> JUMPING JAYBIRD  </a> <!-- the navbar and the easter egg included into it-->
     <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="static/aboutus.html">About Us</a></li>
-    <li><a href="/game">Game</a></li>
-    <li><a href="/standings">Standings</a></li>
-    <li><a href="/forum">Forum</a></li>
+    <li><a href="/">Home</a></li> <!-- the link to the home page -->
+    <li><a href="static/aboutus.html">About Us</a></li> <!-- the link to the about us page -->
+    <li><a href="/game">Game</a></li> <!-- the link to the game page -->
+    <li><a href="/standings">Standings</a></li> <!-- the link to the standings page -->
+    <li><a href="/forum">Forum</a></li> <!-- the link to the forum page -->
     </ul>
   </nav>
 
 <div class="contentProfile">
     <h1>Here is your profile</h1>
 
-    {{#if user}}
-  <table style="width:100%">
-    <tr>
-      <th>User</th>
+    {{#if user}} <!-- checks if you are a user logged in -->
+  <table style="width:100%"> <!-- If you are a user than the profile page table will show the data -->
+    <tr> 
+      <th>User</th> <!-- the table for profile -->
       <th>Score</th>
       <th>Email</th>
     </tr>
-    {{#each scores}}
+    {{#each scores}} <!-- the handlebars method that helps output data from queries -->
         <tr>
             <td>{{this.playerName}}</td>
             <td>{{this.score}}</td>
             <td>{{this.playerEmail}}</td>
         </tr>
-    {{/each}}
+    {{/each}} <!-- closes the each -->
   </table>
-<br>
+<br> <!-- If you are logged in it will show the profile page and the logout -->
 	<form action="/logout" method="POST" style="text-align: center;">
     	<button type="submit" >Logout</button>
 	</form>
-	{{else}}
-		<a href="/register">register</a> <a href="/login">login</a>
+	{{else}} <!-- If you are not logged in then it will ask you to login or register -->
+		<a href="/register">register</a> <a href="/login">login</a> 
 	{{/if}}
 </div>
     </ul>
