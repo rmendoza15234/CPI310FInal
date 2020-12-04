@@ -23,11 +23,9 @@
   <main>
 <div class="Gamelog">
     {{#if user}}
-	<form action="/logout" method="POST">
-    	<button type="submit">logout</button>
-	</form>
-    <div class="gamebtn">
-        <button class="gamebutton" onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.08)">JUMP</button>
+	
+    <div class="gamebtn" >
+        <button class="gamebutton" onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.08)" style="text-align: center;">JUMP</button>
     </div>
     <div>
             <br>
@@ -203,14 +201,33 @@
                 <br>
             </div> 
     <br>
+    <style>
+        #input_box
+        {
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            color:  #bf92bf;
+            border-color: #bf92bf;
+        }
+        #input_area
+        {
+            width: 15%;
+            height: 5%;
+            
+            box-sizing: border-box;
+            text-align: center;
+        }
+    </style>
 	<form action="/addScore" method="POST" style="text-align: center;">
-    	<input type="text" placeholder="Add a score" name="addScore" />
-    	<button type="submit">Send</button>
+    	<input type="text" placeholder="Add a score" name="addScore" height="10px" id="input_area"/>
+    	<button type="submit" id="input_box" style="text-align: center;">Send</button>
 	</form>
+    <br>
     <br>
 	{{else}}
     <h1>Please login to play the game</h1>
-		<a href="/register">register</a> <a href="/login">login</a>
+		<a href="/register">Register</a> <a href="/login">Login</a>
 	{{/if}}
     </ul>
     </div>
