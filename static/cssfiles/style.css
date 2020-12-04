@@ -1,29 +1,38 @@
 body
 {
     padding: 75px;
-    color: white;
+    color: #eceddd;
 }
 a
 {
-    color: white;
+    color: #eceddd;
 }
 h1
 {
     text-align: center;
-    background-color: #cfb209;
+    background-color:  #885c8f;;
     box-sizing: border-box;
-    border: 3px solid white;
-    color:#f1f2df;
-
+    font-size: 50px;
+    border: 3px solid #eceddd;
+    border-radius: 10px;
+    color: #eceddd;
+    margin-left: 300px;
+    margin-right: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 article
 {
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     margin-right: 400px;
     margin-left: 400px;
     border-radius: 30px;
     text-align: center;
     border-style: groove;
-    border-color: white;
+    border-color: #eceddd;
 }
 #border
 {
