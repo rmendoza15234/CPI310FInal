@@ -57,10 +57,10 @@
                     //creating the score component
                  score = new component("32px", "Times", "#eceddd", 280, 40, "text");
                     //this will start the game
-                    myGameArea.start();
+                    scene.start();
                 }
                 //************** CREATING THE GAME AREA
-                var myGameArea = 
+                var scene = 
                 {
                     //canvas is where the game is drawn
                     canvas : document.createElement("canvas"),
@@ -103,51 +103,99 @@
                 //****************** BASICALLY A CONSTRUCTOR SET UP FOR CREATING GAME COMPONENTS FOR PLAYER, SCORE, ETC.
                 function component(width, height, color, x, y, type) 
                 {
-                    this.type = type;
-                    this.score = 0;
-                    this.width = width;
-                    this.height = height;
-                    this.speedX = 0;
-                    this.speedY = 0;    
-                    this.x = x;
-                    this.y = y;
-                    this.gravity = 0;
-                    this.gravitySpeed = 0;
-                    this.update = function() {
-                        ctx = myGameArea.context;
-                        if (this.type == "text") {
-                            ctx.font = this.width + " " + this.height;
-                            ctx.fillStyle = color;
-                            ctx.fillText(this.text, this.x, this.y);
-                        } else {
-                            ctx.fillStyle = color;
-                            ctx.fillRect(this.x, this.y, this.width, this.height);
+                    //constructor variables ******************
+                    this.type = type;  //what type of component
+                    this.score = 0; //score inital value
+                    this.width = width; //the width 
+                    this.height = height; //the height
+                    this.speedX = 0; //speed in x dir
+                    this.speedY = 0;     //speed in y dir
+                    this.x = x; //x position
+                    this.y = y; //y position
+                    this.gravity = 0; //the current gravity force
+                    this.gravVelocity = 0; //the velocity of the gravity pulling down
+                    //***************************************
+
+                    //******** UPDATE FUNCTION *************
+                    this.update = function() 
+                    {
+                        context = scene.context;
+                        if (this.type == "text") 
+                        {
+                            //this keeps the text such as score up to date
+                            context.font = this.width + " " + this.height;
+                            context.fillStyle = color;
+                            context.fillText(this.text, this.x, this.y);
+                        } 
+                        else 
+                        {
+                            context.fillStyle = color;
+                            context.fillRect(this.x, this.y, this.width, this.height);
                         }
                     }
-                    this.newPos = function() {
-                        this.gravitySpeed += this.gravity;
-                        this.x += this.speedX;
-                        this.y += this.speedY + this.gravitySpeed;
+                    //************************
+
+                    //*************NEW POSITION FUNCTION
+                    this.newPos = function() 
+                    {
+                        //the gravity velocity will increase based on gravity
+                        this.gravVelocity = this.gravVelocity + this.gravity;
+                        //x position updates based on speed of x position
+                        this.x = this.x + this.speedX;
+                        //y position updates based on speed of y position
+                        this.y = this.y + this.speedY + this.gravVelocity;
+                        //this is a function to signal where bottom is
                         this.hitBottom();
                     }
-                    this.hitBottom = function() {
-                        var rockbottom = myGameArea.canvas.height - this.height;
-                        if (this.y > rockbottom) {
-                            this.y = rockbottom;
-                            this.gravitySpeed = 0;
+                    //********************************
+
+                    //************* FUNCTION FOR WHERE BOTTOM IS
+                    this.hitBottom = function() 
+                    {
+                        //location of bottom is the height of canvas minus the current height
+                        var bottom = scene.canvas.height - this.height;
+                        //if y position if greater than bottom location
+                        if (this.y > bottom) 
+                        {
+                            //then y position is at the bottom of the canvas
+                            this.y = bottom;
+                            //set the speed of gravity to 0 so we stop moving
+                            this.gravVelocity = 0;
                         }
                     }
-                    this.crashWith = function(otherobj) {
-                        var myleft = this.x;
-                        var myright = this.x + (this.width);
-                        var mytop = this.y;
-                        var mybottom = this.y + (this.height);
-                        var otherleft = otherobj.x;
-                        var otherright = otherobj.x + (otherobj.width);
-                        var othertop = otherobj.y;
-                        var otherbottom = otherobj.y + (otherobj.height);
-                        var crash = true;
-                        if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
+                    //**************************************
+
+                    //************* FUNCTION FOR WHERE TOP IS
+                    //this.hitTop = function() 
+                    //{
+                        //location of top is the height of canvas minus the current height
+                    //    var top = scene.canvas.height + this.height;
+                    //    //if y position if greater than top location
+                     //   if (this.y > top) 
+                    //    {
+                    //        //then y position is at the bottom of the canvas
+                     //       this.y = top;
+                     //       //set the speed of gravity to 0 so we stop moving
+                      //      this.gravVelocity = 0;
+                     //   }
+                   // }
+                    //**************************************
+
+                    //************** CRASH WITH FUNCTION
+                    this.crashWith = function(otherobj) 
+                    {
+                        //VARIABLES
+                        var myleft = this.x; //left = x pos
+                        var myright = this.x + (this.width); //right = x + the width which would be the other side
+                        var mytop = this.y; //top is the y value
+                        var mybottom = this.y + (this.height); //bottom = y + height and that would be the opposite side
+                        var otherleft = otherobj.x; //other left is the left of the other object
+                        var otherright = otherobj.x + (otherobj.width); //other right is the x pos + the width of the other object
+                        var othertop = otherobj.y; //the top of the other object is at the y position
+                        var otherbottom = otherobj.y + (otherobj.height); //the bottom of the other object is at the y pos + the height
+                        var crash = true;// setting crash bool to true
+                        if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) 
+                        {
                             crash = false;
                         }
                         return crash;
@@ -163,10 +211,10 @@
                             return;
                         } 
                     }
-                    myGameArea.clear();
-                    myGameArea.frameNo += 1;
-                    if (myGameArea.frameNo == 1 || everyinterval(150)) {
-                        x = myGameArea.canvas.width;
+                    scene.clear();
+                    scene.frameNo += 1;
+                    if (scene.frameNo == 1 || everyinterval(150)) {
+                        x = scene.canvas.width;
                         minHeight = 20;
                         maxHeight = 200;
                         height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
@@ -180,7 +228,7 @@
                         pipes[i].x += -1;
                         pipes[i].update();
                     }
-                    score.text="SCORE: " + myGameArea.frameNo;
+                    score.text="SCORE: " + scene.frameNo;
                     score.update();
                     flappyBird.newPos();
                     flappyBeak.newPos();
@@ -188,15 +236,18 @@
                     flappyBeak.update();
                 }
                 
-                function everyinterval(n) {
-                    if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
+                function everyinterval(n) 
+                {
+                    if ((scene.frameNo / n) % 1 == 0) {return true;}
                     return false;
                 }
                 
-                function accelerate(n) {
+                function accelerate(n) 
+                {
                     flappyBird.gravity = n;
                     flappyBeak.gravity = n;
                 }
+                //SOURCE: https://www.w3schools.com/graphics/game_intro.asp
                 </script>    
                 <br>
             </div> 
