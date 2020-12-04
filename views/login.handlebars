@@ -1,14 +1,40 @@
+<!DOCTYPE html> 
+<html lang="en">
+	<head>
+		<meta charset = "UTF-8">
+		<meta name="viewport" content="width-device-width, initial-scale-1.0">
+		<title>Profile</title>
+		<link rel="stylesheet" type="text/css" href="static/cssfiles/style3.css">
+	  </head>
+      <br>
+      <body>
+  <nav class = "navbar">
+    <a href = "static/ProfilePage.html" class = "logo"> JUMPING JAYBIRD  </a>
+    <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="static/aboutus.html">About Us</a></li>
+    <li><a href="/game">Game</a></li>
+    <li><a href="/standings">Standings</a></li>
+    <li><a href="/forum">Forum</a></li>
+    </ul>
+  </nav>
 {{#if error}}
 <div style="background: maroon; color: white;">
     {{error}}
 </div>
 {{/if}}
-
+<div class="loginstuff">
 <h1>Login</h1>
-<a href="/register">register</a> <a href="/">home</a>
-
+<div class="textarea">
 <form action="/login" method="POST">
     <input type="email" placeholder="email" name="email" />
     <input type="password" placeholder="password" name="password" />
     <button type="submit">login</button>
+    <ul></ul>
+    <a>If you don't have an account please register</a>
+    <ul></ul>
+    <a href="/register">register</a>
 </form>
+</div>
+</div>
+</body>
