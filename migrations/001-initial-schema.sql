@@ -16,9 +16,8 @@ CREATE TABLE Scores (
 CREATE TABLE Users (
     id INTEGER PRIMARY KEY,
     email STRING UNIQUE,
-    username STRING UNIQUE,
-    password STRING,
-    personalScore INTEGER
+    username STRING,
+    password STRING
 );
 
 --Used for security purposes for user
