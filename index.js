@@ -57,7 +57,6 @@ app.get("/", async (req, res) => {
         Users.username as authorName
         FROM Messages LEFT JOIN Users WHERE Messages.authorId = Users.id;`); //grabs all the messages along with the user who posted the message
     console.log("messages", messages);
-    console.log("userId", req.user.id);
 
     res.render("home", { user: req.user }); //renders the home page
 });
