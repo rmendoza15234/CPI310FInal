@@ -25,20 +25,28 @@
     {{#if user}}
   <table style="width:100%">
     <tr>
-      <th>Username</th>
-      <th></th>
+      <td>Username</td>
+      {{#with scores}}
+        <td>{{this.playerName}}</td>
+      {{/with}}
     </tr>
     <tr>
       <td>Email</td>
-      <td></td>
+      {{#with users}}
+        <td>{{this.email}}</td>
+      {{/with}}
     </tr>
     <tr>
       <td>Password</td>
-      <td></td>
+      {{#with users}}
+        <td>{{this.password}}</td>
+      {{/with}}
     </tr>
     <tr>
-      <td>TBD</td>
-      <td></td>
+      <td>Highest Personal Score</td>
+      {{#each users}}
+        <td>{{this.score}}</td>
+      {{/each}}
     </tr>
   </table>
 
