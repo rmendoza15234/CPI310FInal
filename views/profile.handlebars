@@ -26,25 +26,25 @@
   <table style="width:100%">
     <tr>
       <td>Username</td>
-      {{#with scores}}
+      {{#each scores}}
         <td>{{this.playerName}}</td>
-      {{/with}}
+      {{/each}}
     </tr>
     <tr>
       <td>Email</td>
-      {{#with users}}
+      {{#each users}}
         <td>{{this.email}}</td>
-      {{/with}}
+      {{/each}}
     </tr>
     <tr>
       <td>Password</td>
-      {{#with users}}
+      {{#each users}}
         <td>{{this.password}}</td>
-      {{/with}}
+      {{/each}}
     </tr>
     <tr>
       <td>Highest Personal Score</td>
-      {{#each users}}
+      {{#each scores}}
         <td>{{this.score}}</td>
       {{/each}}
     </tr>
