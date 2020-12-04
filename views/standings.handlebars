@@ -29,17 +29,20 @@
     </ul>
   </nav>
 <div class = "standings">
-
+<h2>Standings</h1>
 	{{#if user}}
 	
 	</form>
 	{{else}}
+	
+	<div class="textarea">
+		<h1>Login to see the standings</h1>
 	<div class="loginbtns">
 		<a href="/register">Register</a> <a href="/login">Login</a>
 		</div>
+		</div>
 	{{/if}}
 	</ul>
-<h2>Standings</h2>
 	{{#if user}}
   <table style="width:100%">
     <tr>
@@ -58,7 +61,7 @@
     	<button type="submit">Logout</button>
 	</form>
 	{{else}}
-		<h1>Login to see the standings</h1>
+		
 	{{/if}}
 </table>
 </div>
