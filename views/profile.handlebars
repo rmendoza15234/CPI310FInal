@@ -25,7 +25,6 @@
     {{#if user}}
   <table style="width:100%">
     <tr>
-<<<<<<< HEAD
       <th>User</th>
       <th>Score</th>
       <th>Email</th>
@@ -38,32 +37,6 @@
             <td>{{this.playerEmail}}</td>
             <td>{{this.playerPassword}}</td>
         </tr>
-    {{/each}}
-=======
-      <td>Username</td>
-      {{#each scores}}
-        <td>{{this.playerName}}</td>
-      {{/each}}
-    </tr>
-    <tr>
-      <td>Email</td>
-      {{#each users}}
-        <td>{{this.email}}</td>
-      {{/each}}
-    </tr>
-    <tr>
-      <td>Password</td>
-      {{#each users}}
-        <td>{{this.password}}</td>
-      {{/each}}
-    </tr>
-    <tr>
-      <td>Highest Personal Score</td>
-      {{#each scores}}
-        <td>{{this.score}}</td>
-      {{/each}}
-    </tr>
->>>>>>> 14026c8e1679aebda07e2be93ef64200b01640aa
   </table>
 
 	<form action="/logout" method="POST">
