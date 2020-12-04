@@ -48,8 +48,14 @@
         <td>{{this.score}}</td>
       {{/each}}
     </tr>
+    {{#each scores}}
+        <tr>
+            <td>{{this.playerName}}</td>
+            <td>{{this.score}}</td>
+        </tr>
+    {{/each}}
   </table>
-  
+
 	<form action="/logout" method="POST">
     	<button type="submit">logout</button>
 	</form>

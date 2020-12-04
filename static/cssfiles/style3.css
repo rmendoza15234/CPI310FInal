@@ -15,6 +15,7 @@ tr, td
 {
     border: solid#eceddd 2px;
     border-radius: 5px;
+    padding-bottom: 5px;
 }
 .navbar {
     background-color:#885c8f;
