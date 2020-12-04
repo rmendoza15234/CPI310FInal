@@ -87,15 +87,16 @@ app.get("/standings", async (req, res) => {
 });
 
 app.get("/profile", async (req, res) => {
-    //read messages from the database
+    //read scores from the database
     const db = await dbPromise;
-    const messages = await db.all(`SELECT
-        Messages.id,
-        Messages.content,
-        Users.username as authorName
-        FROM Messages LEFT JOIN Users WHERE Messages.authorId = Users.id;`); //grabs all the messages along with the user who posted the message
+    const scores = await db.all(`SELECT
+        Scores.id,
+        Scores.score,
+        Users.username as playerName
+        FROM Scores LEFT JOIN Users WHERE Scores.playerId = Users.id;`); //grabs all of the scores along with the user
+    console.log("profile", scores);
 
-    res.render("profile", { user: req.user }); //renders the profile page
+    res.render("profile", { scores: scores, user: req.user }); //renders the standings page
 });
 
 app.get("/forum", async (req, res) => {
